@@ -6,6 +6,11 @@ const port = 8000;
  
 app.use('/', require("./routes"));
 
+// view engine setting
+
+app.set('view engine','ejs');
+app.set('views', './views');
+
 app.listen(port, function(err, res){
     if(err){
         console.log("Error", err);
