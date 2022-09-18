@@ -1,0 +1,52 @@
+.sign-in-card {
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: 20px;
+  background: #09cfd0;
+  background: linear-gradient(186deg, #09cfd0 19%, #d2eaf1 51%);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); }
+  .sign-in-card .sign-in-card-header {
+    text-align: center;
+    margin-bottom: 20px; }
+    .sign-in-card .sign-in-card-header h1 {
+      font-size: 30px;
+      font-weight: 300;
+      margin-bottom: 5px; }
+    .sign-in-card .sign-in-card-header p {
+      font-size: 14px;
+      color: #999; }
+  .sign-in-card .sign-in-card-body .form-group {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    .sign-in-card .sign-in-card-body .form-group .label {
+      display: block;
+      margin-bottom: 5px; }
+    .sign-in-card .sign-in-card-body .form-group .input {
+      margin-top: 10px;
+      width: 70%;
+      height: 40px;
+      padding: 0 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      outline: none; }
+      .sign-in-card .sign-in-card-body .form-group .input:focus {
+        border-color: #999; }
+    .sign-in-card .sign-in-card-body .form-group .button {
+      margin-top: 10px;
+      width: 70%;
+      height: 40px;
+      border: none;
+      border-radius: 5px;
+      background-color: #333;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 300;
+      outline: none;
+      cursor: pointer; }
+      .sign-in-card .sign-in-card-body .form-group .button:hover {
+        background-color: #666; }
