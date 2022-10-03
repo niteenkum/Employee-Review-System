@@ -1,9 +1,12 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const homeController = require('../controllers/home_controllers');
+const userController = require("../controllers/users_controller");
 
-router.get('/', homeController.dashboard);
-// router.auth('')
-router.use('/users', require('./user'));
- 
+router.get('/', userController.SignIn)
+
+router.use('/users', require("./users"));
+router.use('/admin', require("./admin"));
+
+
+
 module.exports = router;

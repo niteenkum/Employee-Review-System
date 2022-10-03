@@ -1,3 +1,18 @@
-<header>
-    <h1>EMPLOYEE REVIEW SYSTEM</h1>
+<header id="header">
+  <p id="ers-title">Employee Review System</p>
+  <% if (locals.user) {%>
+    <div class="items">
+      <a href="/users/profile"><%= user.name %></a>
+      <% if(locals.user.role == "admin"){ %>
+        <a href="/users/admin_dashboard">Dashboard</a>
+        <a href="/admin/add_new_emp">Add New Employee</a>
+      <% } %>
+      <a href="/users/sign-out">Sign Out</a>
+      </div>
+    <%} else {%>
+    <div class="items">
+      <a href="/users/sign-up">Sign Up</a>
+      <a href="/users/sign-in">Sign In</a>
+    </div>
+    <%}%>
 </header>

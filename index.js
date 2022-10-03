@@ -1,16 +1,18 @@
+require('dotenv').config();
 const express = require('express');
+const cookieParser = require('cookie-parser');
 const app = express();
-const port = 8000;
+const port = process.env.PORT || 9000;
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
-const sassMiddleware = require('node-sass-middleware');
-const cookieParser = require('cookie-parser');
+// Used for session cookie 
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
+const MongoStore = require('connect-mongo');
 
+const sassMiddleware = require('node-sass-middleware');
 
-// Setting up sass
 app.use(sassMiddleware({
     src: './assets/scss',
     dest: './assets/css',
@@ -18,45 +20,51 @@ app.use(sassMiddleware({
     outputStyle: 'extended',
     prefix: '/css'
 }));
-app.use(cookieParser());
+
+
 app.use(express.urlencoded());
+app.use(cookieParser());
 
-// Setting assests 
 app.use(express.static('./assets'));
-
-
-
 app.use(expressLayouts);
 
+// Extract style and scripts from sub pages into the layout
+app.set('layout extractStyles', true);
+app.set('layout extractScripts', true);
 
-// view engine setting
 
-app.set('view engine','ejs');
+
+// Setup the view engine
+app.set('view engine', 'ejs');
 app.set('views', './views');
 
-// Setting up session
 
+// Mongo store is used to store the session cookie in the db
 app.use(session({
-    name: 'ers',
+    name: 'codeial',
     secret: 'blahsomething',
     saveUninitialized: false,
     resave: false,
     cookie: {
         maxAge: (1000 * 60 * 100)
     }
+    ,
+    store: MongoStore.create({
+        mongoUrl: "mongodb://localhost/codeial_development" 
+    })
 }));
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(passport.setAuthenticatedUser);
 
-// use express router
- 
-app.use('/', require("./routes"));
+app.use('/', require("./routes/index"));
 
-app.listen(port, function(err, res){
+app.listen(port, function(err){
     if(err){
-        console.log("Error", err);
+        console.log("Error: " + err);
         return;
     }
-    console.log(`Server is running on port ${port}`);
+    console.log("Server is listening on port " + port);
+
 })
