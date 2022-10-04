@@ -13,6 +13,8 @@ const MongoStore = require('connect-mongo');
 
 const sassMiddleware = require('node-sass-middleware');
 
+
+// Using Css File for styling
 app.use(sassMiddleware({
     src: './assets/scss',
     dest: './assets/css',
@@ -21,7 +23,7 @@ app.use(sassMiddleware({
     prefix: '/css'
 }));
 
-
+//  Using EJS for templating
 app.use(express.urlencoded());
 app.use(cookieParser());
 
@@ -54,12 +56,14 @@ app.use(session({
     })
 }));
 
+// Using passport for authentication
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
 
 app.use('/', require("./routes/index"));
 
+// Listening to the port
 app.listen(port, function(err){
     if(err){
         console.log("Error: " + err);
