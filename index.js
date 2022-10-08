@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const app = express();
 
 // Add cookie parser
-const port = process.env.PORT;
+const port = process.env.PORT || 8000;
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
 // Used for session cookie 
