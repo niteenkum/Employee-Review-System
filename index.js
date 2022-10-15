@@ -27,7 +27,7 @@ app.use(sassMiddleware({
 }));
 
 //  Using EJS for templating
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use(express.static('./assets'));
