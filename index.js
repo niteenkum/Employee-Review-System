@@ -13,6 +13,7 @@ const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 const MongoStore = require('connect-mongo');
 
+// For sass middleware
 const sassMiddleware = require('node-sass-middleware');
 
 
