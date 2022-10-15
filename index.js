@@ -1,7 +1,5 @@
-// require('dotenv').config();
-const dotenv = require("dotenv");
-
-dotenv.config();
+require('dotenv').config();
+// const dotenv = require("dotenv");
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const app = express();
@@ -58,7 +56,7 @@ app.use(session({
     }
     ,
     store: MongoStore.create({
-        mongoUrl: "mongodb+srv://ankitkumar:ankitkumar@cluster0.1yfxabs.mongodb.net/?retryWrites=true&w=majority", 
+        mongoUrl: process.env.MONGO_URL, 
     })
 }));
 

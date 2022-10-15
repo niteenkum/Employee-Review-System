@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 
 // DB URL from .env file  
 
-let DB_URL = process.env.DATABASE;
+let DB_URL = process.env.MONGO_URL;
 mongoose
   .connect(DB_URL, {
     usenewurlparser: true,
@@ -15,7 +15,8 @@ mongoose
     console.log(`connection successful `);
   })
   .catch((err) => {
-    console.log(`error connecting to database`, err);
+    console.log(process.env.MONGO_URL);
+    console.log(`error connecting to MONGO_URL`, err);
   });
 
   
