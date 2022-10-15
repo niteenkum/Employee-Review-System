@@ -1,12 +1,14 @@
 const User = require("../models/user");
 const Performance = require("../models/performance");
 
+/* This is a function that is being exported to the controller to add new employee. */
 module.exports.AddNew = function (req, res) {
   return res.render("add_new_emp", {
     title: "Add New",
   });
 };
 
+/* This is a function that is being exported to the controller to view the employee. */
 module.exports.viewUser = function (req, res) {
   const id = req.params.id;
   User.find({ _id: { $ne: id }, role: "user" }, function (err, users) {
@@ -42,6 +44,7 @@ module.exports.viewUser = function (req, res) {
   });
 };
 
+/* This is a function that is being exported to the controller to update the employee. */
 module.exports.updateUser = function (req, res) {
   const id = req.params.id;
   if (res.locals.user.role === "admin") {
@@ -57,6 +60,7 @@ module.exports.updateUser = function (req, res) {
   }
 };
 
+/* This is a function that is being exported to the controller to make the employee admin. */
 module.exports.makeAdmin = function (req, res) {
   if (res.locals.user.role === "admin") {
     User.findByIdAndUpdate(
@@ -76,7 +80,6 @@ module.exports.makeAdmin = function (req, res) {
 };
 
 // Delete Employee
-
 module.exports.deleteUser = function (req, res) {
   console.log("id", req.params.id);
   User.findByIdAndDelete(req.params.id, function (err) {

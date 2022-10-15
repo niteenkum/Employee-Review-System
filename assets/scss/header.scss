@@ -1,3 +1,4 @@
+/* A CSS code for header. */
 #header {
   overflow: hidden;
   background-color: #333;
@@ -8,12 +9,15 @@
   display: flex;
   justify-content: space-between;
   padding: 0 10px 0 10px;
+
+ /* A CSS code for the title of the header. */ 
   #ers-title{
     color:white;
     font-size: 1.2rem;
     line-height: 0rem;
   }
 
+ /* A CSS code for the items in the header. */
   .items{
       display: flex ;
       a{

@@ -1,6 +1,7 @@
 <html>
   <head>
     <title><%= title %></title>
+    <!-- Consuming all the css file -->
     <link rel="styleSheet" href="/css/layout.css">
     <link rel="styleSheet" href="/css/header.css">
     <link rel="styleSheet" href="/css/admin_dashboard.css">
@@ -8,6 +9,7 @@
     <%- style %>
   </head>
   <body>
+    <!-- including header before the body. -->
     <%- include('_header'); %>
     <main id="layout-main">
        <%- body %>

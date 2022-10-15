@@ -1,6 +1,7 @@
 const User = require("../models/user");
 const Performance = require("../models/performance");
 
+/* This is a function that is being exported to the user_controller.js file for rendering the user profile page. */
 module.exports.profile = function (req, res) {
   res.render("user_profile", {
     title: "User Profile Page",

@@ -11,7 +11,8 @@ const db = require('./config/mongoose');
 // Used for session cookie 
 const session = require('express-session');
 const passport = require('passport');
-const passportLocal = require('./config/passport-local-strategy');
+
+/* Used to store the session cookie in the db. */
 const MongoStore = require('connect-mongo');
 
 // For sass middleware
@@ -29,6 +30,7 @@ app.use(sassMiddleware({
 
 //  Using EJS for templating
 app.use(express.urlencoded({ extended: true }));
+/* Used to parse the cookie. */
 app.use(cookieParser());
 
 app.use(express.static('./assets'));

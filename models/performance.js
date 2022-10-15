@@ -1,5 +1,7 @@
+/* Importing the mongoose module. */
 const mongoose = require('mongoose');
 
+/* Creating a schema for the performance model. */
 const performanceSchema = mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
@@ -32,7 +34,7 @@ const performanceSchema = mongoose.Schema({
 }, {
     timestamps: true
 });
-
+/* Creating a model for the performance schema. */
 const Performance = mongoose.model('Performance', performanceSchema);
 
 module.exports = Performance;

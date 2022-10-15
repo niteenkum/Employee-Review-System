@@ -1,3 +1,4 @@
+/* Setting the body to have no margin and centering the text. */
 body {
   margin: 0;
   text-align: center;
@@ -8,6 +9,7 @@ body {
   }
 }
 
+/* Styling the sign in card. */
 .sign-in-card {
   width: 400px;
   margin: 0 auto;
@@ -77,6 +79,7 @@ body {
   }
 }
 
+/* Styling the sign in card. */
 .view-user-page {
   display: flex;
   justify-content: center;
@@ -138,6 +141,7 @@ body {
 }
 
 
+/* Styling the feedback form. */
 .feedback-form {
         
   label {
