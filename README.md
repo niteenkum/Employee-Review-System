@@ -1,4 +1,4 @@
-ISSUES TRACKER: This Project allow you to track employee review and feedback provided by the other employees.
+Employee Review System: This Project allow you to track employee review and feedback provided by the other employees.
 In this project admin have many rights like admin can delete any employee, ask employee to provide feedback to certain employee, having right to make any employee as new admin, delte any employee etc. 
 
 ## Screenshots
